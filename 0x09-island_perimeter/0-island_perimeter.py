@@ -3,10 +3,10 @@
 
 
 def island_perimeter(grid):
-    '''returns the perimeter of the island described in grid'''
+    '''returns perimeter of the grid island'''
     counter = 0
-    grid_max = len(grid) - 1  # index of the last list in the grid
-    lst_max = len(grid[0]) - 1  # index of the last square in list
+    grid_mx = len(grid) - 1
+    lst_mx = len(grid[0]) - 1
 
     for lst_idx, lst in enumerate(grid):
         for land_idx, land in enumerate(lst):
@@ -19,7 +19,7 @@ def island_perimeter(grid):
                     # right side
                     if lst[land_idx + 1] == 0:
                         counter += 1
-                elif land_idx == lst_max:
+                elif land_idx == lst_mx:
                     # left side
                     if lst[land_idx - 1] == 0:
                         counter += 1
@@ -43,7 +43,7 @@ def island_perimeter(grid):
                     # bottom side
                     if grid[lst_idx + 1][land_idx] == 0:
                         counter += 1
-                elif lst_idx == grid_max:
+                elif lst_idx == grid_mx:
                     # top side
                     if grid[lst_idx - 1][land_idx] == 0:
                         counter += 1
